@@ -1,0 +1,31 @@
+<form class="form-inline my-2 my-lg-0 text-light">
+    <small>
+        Your cart:
+        <span *ngIf="cart.itemCount > 0">
+            {{cart.itemCount}} item(s)
+            {{cart.cartPrice | currency:"USD":true:"2.2-2"}} 
+        </span>
+        <span *ngIf="cart.itemCount == 0">
+            (empty)
+        </span>
+    </small>
+    <button class="btn-sm btn btn-secondary m-2 my-sm-0" [disabled]="cart.itemCount == 0">
+        Open Cart
+        <!-- <i class="fas fa-shopping-cart"></i> -->
+    </button>
+  </form>
+<!-- <div class="float-right text-light">
+    <small>
+        Your cart:
+        <span *ngIf="cart.itemCount > 0">
+            {{cart.itemCount}} item(s)
+            {{cart.cartPrice | currency:"USD":true:"2.2-2"}}
+        </span>
+        <span *ngIf="cart.itemCount == 0">
+            (empty)
+        </span>
+    </small>
+    <button class="btn-sm btn btn-secondary" [disabled]="cart.itemCount == 0">
+        <i class="fas fa-shopping-cart"></i>
+    </button>
+</div> -->
