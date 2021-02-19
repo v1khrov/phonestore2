@@ -46,9 +46,13 @@ export class RestDataSource {
     }
 
     setAuthHeaders() {
-        if(this.auth_token.length > 0 && this.auth_headers.getAll.length == 0) {
-            this.auth_headers.set("Authorization:", `Bearer<${this.auth_token}>`);
-        }
+        let headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer<${this.auth_token}>` });
+        this.auth_headers = headers;
+        //if(this.auth_token.length > 0 && this.auth_headers. == 0) {
+        //    this.auth_headers.set("Authorization:", `Bearer<${this.auth_token}>`);
+        //}
     }
 
     getProducts(): Observable<Product[]> {       
